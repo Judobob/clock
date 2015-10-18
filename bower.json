@@ -27,5 +27,12 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "angular-activerecord": "*",
+    "angular-all-unstable": "*",
+    "normalize-css": "*",
+    "bootstrap-sass": "bootstrap-sass-official#~3.3.5",
+    "bootstrap": "~3.3.5"
+  }
 }
