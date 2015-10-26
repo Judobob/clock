@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @nationality.name
+
+= link_to 'Edit', edit_nationality_path(@nationality)
+'|
+= link_to 'Back', nationalities_path

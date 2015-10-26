@@ -13,7 +13,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-
+gem "therubyracer"
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -32,10 +32,45 @@ gem 'bower-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+#simple form
+gem 'simple_form'
+gem 'slim-rails'
+gem 'country_select'
+
+#authentication
+gem 'devise'
+gem 'cancancan'
+gem 'rolify'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'omniauth-google-oauth2'
+
+#web machine
+gem 'mechanize'
+
+#pdf generation
+gem 'prawn-rails'
+
+#datatables
+gem 'jquery-datatables-rails', '~> 3.3.0'
+gem 'ajax-datatables-rails', '0.1.2'
+
+#web server for datatables
+gem 'thin'
+
+#file upload
+gem "paperclip", "~> 4.3"
+
+#facebook
+gem "koala", "~> 2.2"
+
+#xml parsing
+gem 'nokogiri'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 

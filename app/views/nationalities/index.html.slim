@@ -1,0 +1,21 @@
+h1 Listing nationalities
+
+table
+  thead
+    tr
+      th Name
+      th
+      th
+      th
+
+  tbody
+    - @nationalities.each do |nationality|
+      tr
+        td = nationality.name
+        td = link_to 'Show', nationality
+        td = link_to 'Edit', edit_nationality_path(nationality)
+        td = link_to 'Destroy', nationality, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Nationality', new_nationality_path
