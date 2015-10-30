@@ -1,5 +1,5 @@
 {
-  "name": "language_school",
+  "name": "clock",
   "authors": [
     "Judobob <bobalonfife@gmail.com>"
   ],
@@ -13,10 +13,7 @@
     "yui"
   ],
   "keywords": [
-    "Malta",
-    "English",
-    "Language",
-    "Syudents"
+    "Watches"
   ],
   "license": "MIT",
   "homepage": "",
