@@ -30,6 +30,7 @@
     "angular-all-unstable": "*",
     "normalize-css": "*",
     "bootstrap-sass": "bootstrap-sass-official#~3.3.5",
-    "bootstrap": "~3.3.5"
+    "bootstrap": "~3.3.5",
+    "angular-vidbg": "angular-video-background#~0.0.12"
   }
 }

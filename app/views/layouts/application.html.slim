@@ -1,19 +1,24 @@
 doctype html
-html(ng-app='')
+html(ng-app="demo")
   head
-    title Malta Language Learning
+    title Clockwork Consultant
     meta name="viewport" content="width=device-width, initial-scale=1.0"
     = stylesheet_link_tag    "application", media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag "application", 'data-turbolinks-track' => true
     = csrf_meta_tags
-  body  
-  .container
-    - if user_signed_in?
-      = render partial: "layouts/shared/top_menu"
-    - else
-      = render partial: "layouts/shared/front_menu"
+  body ng-controller="mainCtrl"
+    div
+      vid-bg resources="resources" poster="poster" full-screen="fullScreen" muted="muted" z-index="zIndex" play-info="playInfo" pause-play="pausePlay"
+    .container
+      = render partial: "layouts/shared/modal"
+      - if user_signed_in?
+        = render partial: "layouts/shared/top_menu"
+      - else
+        = render partial: "layouts/shared/front_menu"
     #main
-      .container
-         = yield
+        = yield
     #footer
+      div Buffer status:  {{playInfo.buffer}} 
+      div Played:  {{playInfo.played}} 
+      button ng-click=("pausePlay = !pausePlay;")  Toggle Play
       = render partial: "layouts/shared/footer"
