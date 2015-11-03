@@ -1,0 +1,27 @@
+h1 Listing proxies
+
+table
+  thead
+    tr
+      th Name
+      th Ip address
+      th Port
+      th Active
+      th
+      th
+      th
+
+  tbody
+    - @proxies.each do |proxy|
+      tr
+        td = proxy.Name
+        td = proxy.ip_address
+        td = proxy.port
+        td = proxy.active
+        td = link_to 'Show', proxy
+        td = link_to 'Edit', edit_proxy_path(proxy)
+        td = link_to 'Destroy', proxy, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Proxy', new_proxy_path

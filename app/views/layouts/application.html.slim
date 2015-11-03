@@ -10,7 +10,7 @@ html(ng-app="demo")
     div
       vid-bg resources="resources" poster="poster" full-screen="fullScreen" muted="muted" z-index="zIndex" play-info="playInfo" pause-play="pausePlay"
     .container
-      = render partial: "layouts/shared/modal"
+      #modal
       - if user_signed_in?
         = render partial: "layouts/shared/top_menu"
       - else

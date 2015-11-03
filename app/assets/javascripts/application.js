@@ -12,6 +12,7 @@
 //
 //= require angular-all-unstable/angular
 //= require angular-all-unstable/angular-resource
+//= require angular-pageslide-directive
 //= require angular-vidbg
 //= require jquery
 //= require jquery_ujs

@@ -3,7 +3,7 @@
   "authors": [
     "Judobob <bobalonfife@gmail.com>"
   ],
-  "description": "language students",
+  "description": "clock",
   "main": "",
   "moduleType": [
     "amd",
@@ -31,6 +31,7 @@
     "normalize-css": "*",
     "bootstrap-sass": "bootstrap-sass-official#~3.3.5",
     "bootstrap": "~3.3.5",
-    "angular-vidbg": "angular-video-background#~0.0.12"
+    "angular-vidbg": "angular-video-background#~0.0.12",
+    "angular-pageslide-directive": "ng-pageslide#~1.0.5"
   }
 }

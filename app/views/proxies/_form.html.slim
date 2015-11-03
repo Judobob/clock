@@ -1,0 +1,11 @@
+= simple_form_for(@proxy) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :Name
+    = f.input :ip_address
+    = f.input :port
+    = f.input :active
+
+  .form-actions
+    = f.button :submit

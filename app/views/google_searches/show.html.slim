@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong User:
+  = @google_search.user_id
+p
+  strong Search:
+  = @google_search.search
+p
+  strong Result:
+  = @google_search.result
+p
+  strong User:
+  = @google_search.user_id
+p
+  strong Ip address:
+  = @google_search.ip_address
+
+= link_to 'Edit', edit_google_search_path(@google_search)
+'|
+= link_to 'Back', google_searches_path

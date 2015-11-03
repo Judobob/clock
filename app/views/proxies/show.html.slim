@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @proxy.Name
+p
+  strong Ip address:
+  = @proxy.ip_address
+p
+  strong Port:
+  = @proxy.port
+p
+  strong Active:
+  = @proxy.active
+
+= link_to 'Edit', edit_proxy_path(@proxy)
+'|
+= link_to 'Back', proxies_path

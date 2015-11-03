@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :proxies
+  resources :user_profiles
+  resources :google_searches
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
   resources :homes
   # The priority is based upon order of creation: first created -> highest priority.

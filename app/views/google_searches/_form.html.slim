@@ -1,0 +1,12 @@
+= simple_form_for(@google_search) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :user_id
+    = f.input :search
+    = f.input :result
+    = f.input :user_id
+    = f.input :ip_address
+
+  .form-actions
+    = f.button :submit

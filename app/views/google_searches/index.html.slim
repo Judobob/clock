@@ -1,0 +1,29 @@
+h1 Listing google_searches
+
+table
+  thead
+    tr
+      th User
+      th Search
+      th Result
+      th User
+      th Ip address
+      th
+      th
+      th
+
+  tbody
+    - @google_searches.each do |google_search|
+      tr
+        td = google_search.user_id
+        td = google_search.search
+        td = google_search.result
+        td = google_search.user_id
+        td = google_search.ip_address
+        td = link_to 'Show', google_search
+        td = link_to 'Edit', edit_google_search_path(google_search)
+        td = link_to 'Destroy', google_search, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Google search', new_google_search_path
