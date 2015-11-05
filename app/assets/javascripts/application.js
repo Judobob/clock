@@ -16,6 +16,16 @@
 //= require angular-vidbg
 //= require jquery
 //= require jquery_ujs
+//= require dataTables/jquery.dataTables
+//= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
+//= require angular-datatables
 //= require turbolinks
 //= require bootstrap-sass/assets/javascripts/bootstrap-sprockets
 //= require_tree .
+
+$(function() {
+  var faye = new Faye.Client('http://192.168.1.68:9292/faye');
+  faye.subscribe('/messages/new', function (data) {
+    eval(data);
+  });
+});

@@ -4,21 +4,23 @@ html(ng-app="demo")
     title Clockwork Consultant
     meta name="viewport" content="width=device-width, initial-scale=1.0"
     = stylesheet_link_tag    "application", media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag "http://192.168.1.68:9292/faye.js"
     = javascript_include_tag "application", 'data-turbolinks-track' => true
     = csrf_meta_tags
   body ng-controller="mainCtrl"
-    div
-      vid-bg resources="resources" poster="poster" full-screen="fullScreen" muted="muted" z-index="zIndex" play-info="playInfo" pause-play="pausePlay"
-    .container
-      #modal
-      - if user_signed_in?
-        = render partial: "layouts/shared/top_menu"
-      - else
-        = render partial: "layouts/shared/front_menu"
-    #main
-        = yield
-    #footer
-      div Buffer status:  {{playInfo.buffer}} 
-      div Played:  {{playInfo.played}} 
-      button ng-click=("pausePlay = !pausePlay;")  Toggle Play
-      = render partial: "layouts/shared/footer"
+    #con
+      #content
+        div
+          vid-bg resources="resources" poster="poster" full-screen="fullScreen" muted="muted" z-index="zIndex" play-info="playInfo" pause-play="pausePlay"
+        #modal
+        - if user_signed_in?
+          = render partial: "layouts/shared/top_menu"
+        - else
+          = render partial: "layouts/shared/front_menu"
+        #main
+          = yield
+      #footer
+        div Buffer status:  {{playInfo.buffer}} 
+        div Played:  {{playInfo.played}} 
+        button ng-click=("pausePlay = !pausePlay;")  Toggle Play
+        = render partial: "layouts/shared/footer"

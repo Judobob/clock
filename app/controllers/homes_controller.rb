@@ -7,6 +7,7 @@ class HomesController < ApplicationController
   # GET /homes.json
   def index
     @homes = Home.all
+    @messages = Message.all
   end
 
   # GET /homes/1

@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @mega_table.name
+
+= link_to 'Edit', edit_mega_table_path(@mega_table)
+'|
+= link_to 'Back', mega_tables_path

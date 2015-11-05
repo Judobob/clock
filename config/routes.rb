@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :user_groups
+  resources :messages
+  resources :messages
+  resources :mega_tables
   resources :proxies
   resources :user_profiles
   resources :google_searches
@@ -12,7 +16,7 @@ Rails.application.routes.draw do
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
-
+  get  '/chatroom' => 'chats#room', :as => :chat
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 

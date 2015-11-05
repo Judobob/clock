@@ -1,4 +1,4 @@
-nav.navbar.navbar-default
+#top-menu.nav.navbar.navbar-default
      .container-fluid
        .navbar-header
          button.navbar-toggle.collapsed aria-expanded="false" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button" 
@@ -36,20 +36,8 @@ nav.navbar.navbar-default
            .form-group
              input.form-control placeholder="Search" type="text" 
            button.btn.btn-default type="submit"  Submit
-         ul.nav.navbar-nav.navbar-right
-           li
-             a href="#"  Link
-           li.dropdown
-             a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button" 
-               | Dropdown
-               span.caret
-             ul.dropdown-menu
-               li
-                 a href="#"  Action
-               li
-                 a href="#"  Another action
-               li
-                 a href="#"  Something else here
-               li.divider role="separator" 
-               li
-                 a href="#"  Separated link
+         p.navbar-text.pull-right
+           - if user_signed_in?
+            | Logged in as 
+            = current_user.email + " "
+            = link_to "Logout", destroy_user_session_path, method: :delete

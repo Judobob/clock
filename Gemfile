@@ -46,6 +46,9 @@ gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
 
+#pagination
+gem 'will_paginate', '~> 3.0.6'
+
 #web machine
 gem 'mechanize'
 
@@ -64,6 +67,10 @@ gem "paperclip", "~> 4.3"
 
 #facebook
 gem "koala", "~> 2.2"
+
+#chat
+
+gem 'faye-rails'
 
 #xml parsing
 gem 'nokogiri'
