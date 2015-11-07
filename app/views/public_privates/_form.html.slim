@@ -1,0 +1,10 @@
+= simple_form_for(@public_private) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :private_key
+    = f.input :public_key
+    = f.input :message_id
+
+  .form-actions
+    = f.button :submit

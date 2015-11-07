@@ -1,0 +1,25 @@
+h1 Listing public_privates
+
+table
+  thead
+    tr
+      th Private key
+      th Public key
+      th Message
+      th
+      th
+      th
+
+  tbody
+    - @public_privates.each do |public_private|
+      tr
+        td = public_private.private_key
+        td = public_private.public_key
+        td = public_private.message_id
+        td = link_to 'Show', public_private
+        td = link_to 'Edit', edit_public_private_path(public_private)
+        td = link_to 'Destroy', public_private, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Public private', new_public_private_path

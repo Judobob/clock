@@ -20,6 +20,7 @@
 //= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
 //= require angular-datatables
 //= require turbolinks
+//= require jquery_nested_form
 //= require bootstrap-sass/assets/javascripts/bootstrap-sprockets
 //= require_tree .
 

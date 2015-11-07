@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong User profile:
+  = @user_enquiry.user_profile_id
+p
+  strong Description:
+  = @user_enquiry.description
+
+= link_to 'Edit', edit_user_enquiry_path(@user_enquiry)
+'|
+= link_to 'Back', user_enquiries_path

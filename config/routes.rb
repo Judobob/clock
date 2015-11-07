@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :public_privates
+  resources :user_enquiries
+  resources :user_profiles
   resources :user_groups
   resources :messages
   resources :messages

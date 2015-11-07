@@ -1,0 +1,9 @@
+= simple_form_for(@user_enquiry) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :user_profile_id
+    = f.input :description
+
+  .form-actions
+    = f.button :submit

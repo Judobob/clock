@@ -12,4 +12,8 @@ class User < ActiveRecord::Base
         user.password = Devise.friendly_token[0,20]
       end
   end
+  
+  has_one :user_profile
+  has_many :user_group_linkings
+  has_many :user_groups, through: :user_group_linkings
 end

@@ -1,1 +1,14 @@
-= render partial: "messages/index"
+#main-home.container
+  #main-panel.panel.panel-default
+    .panel-heading.transparent
+      ul.nav.nav-tabs.list
+        li.tab 
+          = link_to 'Home',"#",class: "list-tab"
+        li.tab 
+          = link_to 'Profile',"#",class: "list-tab"
+        li.tab 
+          = link_to 'Documents',"#",class: "list-tab"
+    #main-panel-body.panel-body
+        = render partial: @show_new
+    .panel-footer.transparent
+  = render partial: "messages/index"

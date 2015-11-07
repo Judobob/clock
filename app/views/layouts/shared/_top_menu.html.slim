@@ -6,15 +6,19 @@
            span.icon-bar
            span.icon-bar
            span.icon-bar
-         a.navbar-brand href="#"  Brand
+         a.navbar-brand href="#"
+           .glyphicon.glyphicon-time
        #bs-example-navbar-collapse-1.collapse.navbar-collapse
          ul.nav.navbar-nav
            li.active
              a href="#" 
-               | Link
+               .glyphicon.glyphicon-user
                span.sr-only (current)
            li
-             a href="#"  Link
+             = current_user.email + " "
+           li
+             = link_to destroy_user_session_path, method: :delete do
+                 .glyphicon.glyphicon-log-out
            li.dropdown
              a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button" 
                | Dropdown
@@ -37,7 +41,4 @@
              input.form-control placeholder="Search" type="text" 
            button.btn.btn-default type="submit"  Submit
          p.navbar-text.pull-right
-           - if user_signed_in?
-            | Logged in as 
-            = current_user.email + " "
-            = link_to "Logout", destroy_user_session_path, method: :delete
+           

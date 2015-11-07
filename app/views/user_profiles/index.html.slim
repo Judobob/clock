@@ -4,9 +4,10 @@ table
   thead
     tr
       th User
-      th User first name
-      th User second name
-      th User email
+      th First name
+      th Second name
+      th Telephone
+      th Email
       th
       th
       th
@@ -15,9 +16,10 @@ table
     - @user_profiles.each do |user_profile|
       tr
         td = user_profile.user_id
-        td = user_profile.user_first_name
-        td = user_profile.user_second_name
-        td = user_profile.user_email
+        td = user_profile.first_name
+        td = user_profile.second_name
+        td = user_profile.telephone
+        td = user_profile.email
         td = link_to 'Show', user_profile
         td = link_to 'Edit', edit_user_profile_path(user_profile)
         td = link_to 'Destroy', user_profile, data: {:confirm => 'Are you sure?'}, :method => :delete

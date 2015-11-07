@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Private key:
+  = @public_private.private_key
+p
+  strong Public key:
+  = @public_private.public_key
+p
+  strong Message:
+  = @public_private.message_id
+
+= link_to 'Edit', edit_public_private_path(@public_private)
+'|
+= link_to 'Back', public_privates_path

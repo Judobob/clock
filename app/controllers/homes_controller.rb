@@ -8,6 +8,13 @@ class HomesController < ApplicationController
   def index
     @homes = Home.all
     @messages = Message.all
+    if UserProfile.exists?(current_user.id)
+      @user_profile = UserProfile.find(current_user.id)
+      @show_new = 'user_profiles/show'
+    else
+      @user_profile = UserProfile.new
+      @show_new = 'user_profiles/new'
+    end
   end
 
   # GET /homes/1

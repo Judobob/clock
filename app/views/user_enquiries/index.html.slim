@@ -1,0 +1,23 @@
+h1 Listing user_enquiries
+
+table
+  thead
+    tr
+      th User profile
+      th Description
+      th
+      th
+      th
+
+  tbody
+    - @user_enquiries.each do |user_enquiry|
+      tr
+        td = user_enquiry.user_profile_id
+        td = user_enquiry.description
+        td = link_to 'Show', user_enquiry
+        td = link_to 'Edit', edit_user_enquiry_path(user_enquiry)
+        td = link_to 'Destroy', user_enquiry, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New User enquiry', new_user_enquiry_path
