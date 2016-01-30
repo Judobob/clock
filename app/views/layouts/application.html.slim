@@ -19,8 +19,6 @@ html(ng-app="demo")
           = render partial: "layouts/shared/front_menu"
         #main
           = yield
-      #footer
-        div Buffer status:  {{playInfo.buffer}} 
-        div Played:  {{playInfo.played}} 
-        button ng-click=("pausePlay = !pausePlay;")  Toggle Play
-        = render partial: "layouts/shared/footer"
+    #footer
+      button.play-button ng-click=("pausePlay = !pausePlay;") control movie
+      = render partial: "layouts/shared/footer"

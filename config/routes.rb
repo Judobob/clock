@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :general_enquiries
   resources :public_privates
   resources :user_enquiries
   resources :user_profiles
@@ -9,11 +10,11 @@ Rails.application.routes.draw do
   resources :proxies
   resources :user_profiles
   resources :google_searches
-  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
+  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks",sessions: 'sessions', registrations: 'registrations' }
   resources :homes
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
+  
   # You can have the root of your site routed with "root"
   root 'homes#index'
 

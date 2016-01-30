@@ -9,6 +9,11 @@ Bundler.require(*Rails.groups)
 
 module LanguageSchool
   class Application < Rails::Application
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    config.assets.paths << Rails.root.join("app", "assets", "videos")
+        # add custom validators path
+    config.autoload_paths += %W["#{config.root}/app/validators/"]
+
     root.join('vendor', 'assets', 'bower_components').to_s.tap do |bower_path|
      config.sass.load_paths << bower_path
      config.assets.paths << bower_path

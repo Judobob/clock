@@ -1,0 +1,2 @@
+module GeneralEnquiriesHelper
+end

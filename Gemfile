@@ -70,6 +70,9 @@ gem "paperclip", "~> 4.3"
 #facebook
 gem "koala", "~> 2.2"
 
+#vimeo
+gem 'vimeo'
+
 #chat
 
 gem 'faye-rails'

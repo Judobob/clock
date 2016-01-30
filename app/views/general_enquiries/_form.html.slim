@@ -1,0 +1,11 @@
+= simple_form_for(GeneralEnquiry.new,:format => :json,:remote => true, :name =>'myForm') do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :email 
+    = f.input :message
+	h1 |{{myForm.myInput.$valid}}
+  .form-actions
+    = f.button :submit , label:'Submit'
+
+    

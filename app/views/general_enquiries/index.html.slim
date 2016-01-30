@@ -1,0 +1,23 @@
+h1 Listing general_enquiries
+
+table
+  thead
+    tr
+      th Email
+      th Message
+      th
+      th
+      th
+
+  tbody
+    - @general_enquiries.each do |general_enquiry|
+      tr
+        td = general_enquiry.email
+        td = general_enquiry.message
+        td = link_to 'Show', general_enquiry
+        td = link_to 'Edit', edit_general_enquiry_path(general_enquiry)
+        td = link_to 'Destroy', general_enquiry, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New General enquiry', new_general_enquiry_path

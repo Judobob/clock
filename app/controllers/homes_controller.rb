@@ -7,7 +7,12 @@ class HomesController < ApplicationController
   # GET /homes.json
   def index
     @homes = Home.all
+    # new message for chat
     @messages = Message.all
+    @message = Message.new
+    @message.build_public_private
+    puts @message.public_private.to_yaml
+
     if UserProfile.exists?(current_user.id)
       @user_profile = UserProfile.find(current_user.id)
       @show_new = 'user_profiles/show'

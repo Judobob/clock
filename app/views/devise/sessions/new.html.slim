@@ -1,18 +1,34 @@
-.login  
-  h1.page-header Client Area
-  	
-  = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-    .form-group
-      = f.label :email, class: 'control-label'
-      = f.email_field :email, autofocus: true, class: 'form-control'
-    .form-group
-      = f.label :password, class: 'control-label'
-      = f.password_field :password, class: 'form-control'
-    - if devise_mapping.rememberable?
-      .checkbox
-        = f.check_box :remember_me
-        = f.label :remember_me
-    .form-actions
-      = f.submit 'Sign in', class: 'btn btn-primary btn-lg'
-	
-  = render 'devise/shared/links'
+div ng-controller="pageslideCtrl"
+    a class="large button menu-front" id="log-in-text" ng-click="toggle()" Log in   
+    pageslide ps-open="checked" ps-side="left" 
+      div       
+        .login  
+ 	      = form_for(resource, :as => resource_name, :url => session_path(resource_name),:html => {:id => "sign_in_user"},:format => :json,:remote => true ) do |f|
+ 	       .form-group
+ 	         = f.label 'Log in:', class: 'control-label'
+ 	         = f.email_field :email, autofocus: true, class: 'form-control'
+ 	       .form-group
+  	         = f.label 'Password:', class: 'control-label'
+  	         = f.password_field :password, class: 'form-control'
+  	         = render 'devise/shared/links'
+  	       .form-actions
+   	         = f.submit 'Sign in', class: 'btn btn-medium'
+div ng-controller="pageslideCtrl"
+    a class="large button menu-front" id="message-text" ng-click="toggle()" Contact
+    pageslide ps-open="checked" ps-side="right" 
+      div       
+	    .login 
+ 	      = render 'general_enquiries/form.html.slim'	     
+div ng-controller="pageslideCtrl"
+    a class="large button menu-front" id="portfolio-text" ng-click="toggle()" Portfolio
+    pageslide ps-open="checked" ps-side="bottom" 
+      div       
+	    .login 
+ 	      = render 'general_enquiries/form.html.slim'
+div ng-controller="pageslideCtrl"
+    a class="large button menu-front" id="news-text"ng-click="toggle()" News
+    pageslide ps-open="checked" ps-side="top" 
+      div       
+	    .login 
+ 	      = render 'general_enquiries/form.html.slim'	
+

@@ -6,7 +6,10 @@
     ul#chat.list-group
       - render @messages
   .panel-footer.transparent
-    = form_for Message.new, :remote => true do |f| 
+    = simple_nested_form_for @message, :remote => true do |f| 
       = f.text_field :content
+      = f.fields_for :public_private do |pp|
+        = pp.text_field :private_key
+        = pp.text_field :public_key
       = f.submit "Send"
   

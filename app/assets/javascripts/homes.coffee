@@ -3,21 +3,40 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 receta = angular.module('receta',[
 ])
+#define slider controller
+slider = angular.module('slider', [ 'pageslide-directive' ])
 
-angular.module('demo', [ 'ngVidBg' ]).controller 'mainCtrl', [
+
+slider.controller 'pageslideCtrl', [
+  '$scope'
+  ($scope) ->
+    $scope.checked = false
+    # This will be binded using the ps-open attribute
+
+    $scope.toggle = ->
+      $scope.checked = !$scope.checked
+
+]
+
+video = angular.module('video', [ 'ngVidBg' ])
+
+video.controller 'mainCtrl', [
   '$scope'
   ($scope) ->
     $scope.resources = [
-      'http://techslides.com/demos/sample-videos/small.webm'
+      '/assets/1.webm'
       '*.ogv'
       '*.mp4'
       '*.swf'
     ]
-    $scope.poster = 'http://placehold.it/2000&text=you%20may%20want%20to%20have%20a%20poster'
+    $scope.poster = ''
     $scope.fullScreen = true
     $scope.muted = true
     $scope.zIndex = '-22'
     $scope.playInfo = {}
+    $scope.currentResourceIdx = 0
     $scope.pausePlay = true
     return
 ]
+
+angular.module('demo',['slider','video'])

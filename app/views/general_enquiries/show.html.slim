@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Email:
+  = @general_enquiry.email
+p
+  strong Message:
+  = @general_enquiry.message
+
+= link_to 'Edit', edit_general_enquiry_path(@general_enquiry)
+'|
+= link_to 'Back', general_enquiries_path
